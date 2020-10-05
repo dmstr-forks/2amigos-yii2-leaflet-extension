@@ -52,7 +52,7 @@ class FeatureGroup extends LayerGroup
         if (empty($name)) {
             $js[] = $initJs . ($map !== null ? "" : ";");
         } else {
-            $js[] = "var $name = $initJs" . ($map !== null ? "" : ";");
+            $js[] = "$name = $initJs" . ($map !== null ? "" : ";");
         }
         return new JsExpression(implode("\n", $js));
     }

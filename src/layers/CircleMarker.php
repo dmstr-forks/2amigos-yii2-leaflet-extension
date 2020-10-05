@@ -36,7 +36,7 @@ class CircleMarker extends Circle
         $map = $this->map;
         $js = $this->bindPopupContent("L.circleMarker($bounds, $options)") . ($map !== null ? ".addTo($map);" : "");
         if (!empty($name)) {
-            $js = "var $name = $js" . ($map !== null ? "" : ";");
+            $js = "$name = $js" . ($map !== null ? "" : ";");
         }
         return new JsExpression($js);
     }

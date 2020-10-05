@@ -68,7 +68,7 @@ class TileLayer extends Layer
         $map = $this->map;
         $js = "L.tileLayer('$this->urlTemplate', $options)" . ($map !== null ? ".addTo($map);" : "");
         if (!empty($name)) {
-            $js = "var $name = $js" . ($map !== null ? "" : ";");
+            $js = "$name = $js" . ($map !== null ? "" : ";");
             $js .= $this->getEvents();
         }
 

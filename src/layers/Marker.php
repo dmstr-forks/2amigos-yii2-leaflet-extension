@@ -71,7 +71,7 @@ class Marker extends Layer
         $map = $this->map;
         $js = $this->bindPopupContent("L.marker($latLon, $options)") . ($map !== null ? ".addTo($map)" : "");
         if (!empty($name)) {
-            $js = "var $name = $js;";
+            $js = "$name = $js;";
         }
         $js .= $this->getEvents() . ($map !== null && empty($name)? ";" : "");
 

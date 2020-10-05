@@ -45,7 +45,7 @@ class GeoJson extends Layer
         $map = $this->map;
         $js = "L.geoJson($data, $options)" . ($map !== null ? ".addTo($map)" : "") . ";";
         if (!empty($name)) {
-            $js = "var $name = $js";
+            $js = "$name = $js";
         }
 
         return new JsExpression($js);
