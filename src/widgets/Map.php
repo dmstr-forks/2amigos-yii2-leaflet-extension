@@ -85,6 +85,7 @@ class Map extends Widget
         $id = $this->options['id'];
         $name = $this->leafLet->name;
         $js = $this->leafLet->getJs();
+        $zoomControl = false;
 
         $clientOptions = $this->leafLet->clientOptions;
 
@@ -96,6 +97,7 @@ class Map extends Widget
             $lateInitClientOptions['bounds'] = $clientOptions['bounds'];
             unset($clientOptions['bounds']);
         }
+        $clientOptions['zoomControl'] = $zoomControl;
         unset($clientOptions['center']);
         unset($clientOptions['zoom']);
 
